@@ -105,7 +105,7 @@ export default function Welcome() {
 
         <div className="grid gap-3 sm:grid-cols-2">
           <Button size="lg" className="rounded-xl h-14" asChild>
-            <Link href="/programs/vitality-reset">
+            <Link href="/program">
               Start Week 1 <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </Button>

@@ -220,7 +220,7 @@ const ClientDashboard = () => {
               </div>
 
               <Button asChild className="w-full rounded-xl" data-testid="button-vitality-reset">
-                <Link href="/programs/vitality-reset">
+                <Link href="/program">
                   {hasAccess ? "Continue Vitality Reset" : "Preview Program"}
                 </Link>
               </Button>

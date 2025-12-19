@@ -26,8 +26,7 @@ const PROGRAMS = [
 ];
 
 const WeekDetail = () => {
-  const params = useParams();
-  const programId = params.programId;
+  const params = useParams<{ weekId: string }>();
   const weekId = params.weekId;
   const [, setLocation] = useLocation();
   const { user } = useAuth();
@@ -63,13 +62,8 @@ const WeekDetail = () => {
     );
   }
 
-  const resolvedProgramId =
-    programId === "4-week" ? "vitality-reset" : programId;
-
-  const program =
-    PROGRAMS.find((p) => p.id === resolvedProgramId) ?? PROGRAMS[0];
-
-  const weeksForProgram = getWeeksForProgram(resolvedProgramId || "vitality-reset");
+  const program = PROGRAMS[0]; // Single program: Vitality Reset
+  const weeksForProgram = getWeeksForProgram("vitality-reset");
 
   const week =
     weeksForProgram.find((w) => w.id === weekId) ?? weeksForProgram[0];
@@ -86,7 +80,7 @@ const WeekDetail = () => {
           <Button
             variant="ghost"
             size="sm"
-            onClick={() => setLocation(`/programs/${resolvedProgramId}`)}
+            onClick={() => setLocation("/program")}
             data-testid="button-back-program"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

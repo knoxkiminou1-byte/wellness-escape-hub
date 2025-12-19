@@ -169,7 +169,7 @@ const HowItWorks = () => {
 
         <div className="pt-4">
           <Button asChild className="w-full" size="lg" data-testid="button-go-to-program">
-            <Link href="/programs/vitality-reset">
+            <Link href="/program">
               Go to Vitality Reset
             </Link>
           </Button>

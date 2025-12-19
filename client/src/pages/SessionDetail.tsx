@@ -32,7 +32,7 @@ const getAllSessions = (): SessionContent[] => {
 };
 
 const SessionDetail = () => {
-  const params = useParams();
+  const params = useParams<{ sessionId: string }>();
   const sessionId = params.sessionId;
   const [, setLocation] = useLocation();
   const { user } = useAuth();

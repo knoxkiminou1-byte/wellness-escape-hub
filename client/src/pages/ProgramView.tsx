@@ -31,21 +31,13 @@ const PROGRAMS = [
 ];
 
 const ProgramView = () => {
-  const params = useParams();
-  const programId = params.programId;
   const [, setLocation] = useLocation();
 
   const { user, isAdmin } = useAuth();
   const hasAccess = Boolean(isAdmin || user?.hasAccess);
 
-
-  const resolvedProgramId =
-    programId === "4-week" ? "vitality-reset" : programId;
-
-  const program =
-    PROGRAMS.find((p) => p.id === resolvedProgramId) ?? PROGRAMS[0];
-
-  const weeksForProgram = getWeeksForProgram(resolvedProgramId || "vitality-reset");
+  const program = PROGRAMS[0]; // Single program: Vitality Reset
+  const weeksForProgram = getWeeksForProgram("vitality-reset");
 
   const getPillarBadge = (pillarId: string) => {
     const pillar = FIVE_PILLARS.find((p) => p.id === pillarId);
@@ -97,7 +89,8 @@ const ProgramView = () => {
             {program.longDescription || program.shortDescription}
           </p>
 
-          {resolvedProgramId === "vitality-reset" && (
+          {/* 5 Pillars - Vitality Reset */}
+          {(
             <div className="space-y-4">
               <h3 className="text-sm font-medium text-foreground">
                 The 5 Pillars You'll Master
@@ -174,7 +167,7 @@ const ProgramView = () => {
                         asChild
                         className="hidden sm:inline-flex"
                       >
-                        <Link href={`/programs/${resolvedProgramId}/weeks/${week.id}`}>
+                        <Link href={`/week/${week.id}`}>
                           View week details
                         </Link>
                       </Button>
@@ -277,7 +270,7 @@ const ProgramView = () => {
                         className="w-full sm:hidden"
                         asChild
                       >
-                        <Link href={`/programs/${resolvedProgramId}/weeks/${week.id}`}>
+                        <Link href={`/week/${week.id}`}>
                           View week details
                         </Link>
                       </Button>
