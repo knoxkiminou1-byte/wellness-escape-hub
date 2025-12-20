@@ -350,7 +350,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
     title: "Radiate",
     theme: "Integration and Confidence",
     summary:
-      "Step into the strongest, most confident version of yourself. Protect your changes with realistic plans for weekends, travel, and the next ninety days.",
+      "Integration. Bringing everything together. This is about stepping fully into your POWER.",
     pillars: ["radiate"],
     coachingSession: COACHING_SESSIONS[3],
     sessions: [
@@ -378,13 +378,13 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
           },
           {
             id: "7-2",
-            title: "Obstacle proofing your Plan",
+            title: "Build your Personalized Wellness Plan",
             description:
-              "Create your strategy for staying on track during life's disruptions.",
+              "Create your sustainable wellness plan moving forward.",
             steps: [
-              "Identify your top 3 disruption scenarios",
-              "Create a 'minimum viable' wellness plan for each",
-              "Write out your non negotiables vs. nice to haves",
+              "Write your 90 day wellness vision",
+              "List the 3 to 5 habits you're committing to long term",
+              "Create your 'if/then' plans for common obstacles",
             ],
             estimatedMinutes: 15,
           },
@@ -403,13 +403,13 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
         progressionAssignments: [
           {
             id: "8-1",
-            title: "Build your Personalized Wellness Plan",
+            title: "Obstacle proofing your Plan",
             description:
-              "Create your sustainable wellness plan for the next 90 days.",
+              "Create your strategy for staying on track during life's disruptions.",
             steps: [
-              "Write your 90 day wellness vision",
-              "List the 3 to 5 habits you're committing to long term",
-              "Create your 'if/then' plans for common obstacles",
+              "Identify your top 3 disruption scenarios",
+              "Create a 'minimum viable' wellness plan for each",
+              "Write out your non negotiables vs. nice to haves",
               "Write a letter to yourself to open in 90 days",
             ],
             estimatedMinutes: 20,

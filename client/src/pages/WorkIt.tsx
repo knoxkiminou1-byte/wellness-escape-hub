@@ -182,9 +182,7 @@ export default function WorkIt() {
                     <CardTitle className="text-lg">
                       Week {week.weekNumber}: {week.title}
                     </CardTitle>
-                    <CardDescription className="mt-1">
-                      {week.objective}
-                    </CardDescription>
+                    <p className="text-sm text-primary/80 mt-1">{week.subtitle}</p>
                   </div>
                   {progress.isComplete && (
                     <div className="badge-included flex items-center gap-1">

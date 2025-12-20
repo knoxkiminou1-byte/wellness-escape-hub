@@ -11,7 +11,7 @@ type NavItem = {
 const NAV: NavItem[] = [
   { href: "/app", label: "Home", icon: Home },
   { href: "/program", label: "Program", icon: Dumbbell },
-  { href: "/work-it", label: "Progressive Assignments", icon: Flame },
+  { href: "/work-it", label: "Progress", icon: Flame },
   { href: "/schedule", label: "Schedule", icon: Calendar },
   { href: "/habits", label: "Habits", icon: CheckSquare },
   { href: "/profile", label: "Account", icon: User },
