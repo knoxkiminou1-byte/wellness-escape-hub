@@ -145,7 +145,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
       {
         id: "1",
         title: "Welcome to Vitality Reset",
-        subtitle: "Your journey to mindful wellness begins",
+        subtitle: "Transform your Health in just 4 weeks",
         description:
           "Welcome to Wellness Escape and your Vitality Reset! I know what it takes to make this decision - to invest in yourself, to carve out time in your already packed schedule. I see you - juggling career, family, relationships, and a million responsibilities. You deserve to feel strong, energized, and confident in your body.",
         durationMinutes: 15,
@@ -232,9 +232,9 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
         progressionAssignments: [
           {
             id: "3-1",
-            title: "Movement Inventory",
+            title: "Mindset Shift",
             description:
-              "Take stock of what movement already exists in your life and what feels good.",
+              "Shift your mindset about movement from punishment to self care.",
             steps: [
               "List all the ways you move in a typical week",
               "Rate each type of movement: Does it energize or deplete you?",
@@ -319,7 +319,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
       },
       {
         id: "6",
-        title: "Refining Sleep Strategy",
+        title: "Recovery Reflection",
         subtitle: "Reclaiming restorative rest",
         description:
           "Sleep is when your body heals and resets. We'll refine your sleep strategy and create an evening routine that signals your body it's time to wind down.",
@@ -330,7 +330,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
         progressionAssignments: [
           {
             id: "6-1",
-            title: "Sleep Audit",
+            title: "Refining Sleep Strategy",
             description: "Evaluate your current sleep patterns and environment.",
             steps: [
               "Track your sleep for 5 nights (time to bed, wake time, quality 1 to 10)",
