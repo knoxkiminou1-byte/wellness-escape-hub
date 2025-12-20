@@ -184,7 +184,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
       },
       {
         id: "2",
-        title: "Nutrition & Hydration Fundamentals",
+        title: "Nutrition & Hydration Basics",
         subtitle: "Fuel that works for women over 40",
         description:
           "We're diving into nutrition basics - breakfast, lunch, and dinner. Not diet rules, but strategies that work WITH your body, specifically after 40. We'll talk about hydration and how something as simple as water can change your energy, your hunger cues, and your recovery.",
@@ -195,7 +195,7 @@ export const VITALITY_RESET_WEEKS: WeekContent[] = [
         progressionAssignments: [
           {
             id: "2-1",
-            title: "Hydration Goal: Working to 90oz",
+            title: "Reflection and Weekend Strategy",
             description:
               "Now that you know your baseline, let's work toward optimal hydration.",
             steps: [

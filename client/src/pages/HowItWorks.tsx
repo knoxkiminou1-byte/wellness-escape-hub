@@ -104,7 +104,7 @@ const HowItWorks = () => {
               <div className="flex items-start gap-3 p-3 rounded-md bg-muted/50">
                 <ClipboardList className="w-5 h-5 text-primary shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-sm">Progression Assignments</p>
+                  <p className="font-medium text-sm">Progressive Assignments</p>
                   <p className="text-xs text-muted-foreground">
                     Worksheets and action guides for each lesson
                   </p>

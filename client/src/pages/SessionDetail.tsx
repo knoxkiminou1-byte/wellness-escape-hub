@@ -269,7 +269,7 @@ const SessionDetail = () => {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-base">
                 <ClipboardList className="w-4 h-4" />
-                Progression Assignments
+                Progressive Assignments
               </CardTitle>
               <CardDescription>
                 Complete these assignments to get the most out of this lesson.

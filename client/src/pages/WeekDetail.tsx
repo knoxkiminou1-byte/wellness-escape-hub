@@ -94,9 +94,12 @@ const WeekDetail = () => {
         <section>
           <Card className="wellness-card">
             <CardHeader>
-              <CardTitle className="text-base">Movement library</CardTitle>
+              <CardTitle className="text-base">Movement Library</CardTitle>
               <CardDescription>
                 Use these as quick references for the core moves. Timer included.
+                <span className="block mt-1 text-xs opacity-80">
+                  Movement demos coming soon (video or photo guidance).
+                </span>
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
@@ -211,7 +214,7 @@ const WeekDetail = () => {
                     <div className="ml-8 space-y-2">
                       <p className="text-xs font-medium text-muted-foreground flex items-center gap-1">
                         <ClipboardList className="w-3 h-3" />
-                        Progression Assignments
+                        Progressive Assignments
                       </p>
                       {session.progressionAssignments.map((assignment) => (
                         <div

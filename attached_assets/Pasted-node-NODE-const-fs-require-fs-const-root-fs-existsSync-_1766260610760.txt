@@ -1,0 +1,96 @@
+node <<'NODE'
+const fs = require("fs");
+
+const root =
+  fs.existsSync("client/src/lib/vitality-reset-content.ts") ? "" :
+  fs.existsSync("wellness-escape-hub/client/src/lib/vitality-reset-content.ts") ? "wellness-escape-hub/" :
+  "";
+
+if (!root) throw new Error("Run this from the project root (where package.json is).");
+
+const read = (p) => fs.readFileSync(p, "utf8");
+const write = (p, s) => fs.writeFileSync(p, s, "utf8");
+
+function replace(p, re, to) {
+  const s0 = read(p);
+  const s1 = s0.replace(re, to);
+  if (s1 !== s0) write(p, s1);
+  return s1 !== s0;
+}
+
+let changed = [];
+
+/* 1) Force Movement Library title + helper line in WeekDetail */
+const weekDetail = root + "client/src/pages/WeekDetail.tsx";
+
+if (fs.existsSync(weekDetail)) {
+  // Title capitalization
+  if (replace(weekDetail, /Movement library/g, "Movement Library")) changed.push(weekDetail);
+
+  // Insert helper line inside the CardDescription no matter the indentation
+  const s0 = read(weekDetail);
+  if (!s0.includes("Movement demos coming soon")) {
+    const re = /(<CardDescription>\s*\n\s*Use these as quick references for the core moves\. Timer included\.\s*\n\s*<\/CardDescription>)/m;
+    const to = `<CardDescription>
+                Use these as quick references for the core moves. Timer included.
+                <span className="block mt-1 text-xs opacity-80">
+                  Movement demos coming soon (video or photo guidance).
+                </span>
+              </CardDescription>`;
+    const s1 = s0.replace(re, to);
+    if (s1 !== s0) {
+      write(weekDetail, s1);
+      changed.push(weekDetail);
+    }
+  }
+}
+
+/* 2) Fix the Week 1 hydration assignment title variant if it still exists anywhere */
+const vitality = root + "client/src/lib/vitality-reset-content.ts";
+if (fs.existsSync(vitality)) {
+  const before = read(vitality);
+  const after = before
+    .replace(/Hydration Goal:\s*Working to\s*90oz/g, "Reflection and Weekend Strategy")
+    .replace(/Hydration Fundamentals/g, "Nutrition & Hydration Basics"); // harmless if already updated
+
+  if (after !== before) {
+    write(vitality, after);
+    changed.push(vitality);
+  }
+}
+
+/* 3) Ensure section label says Progressive Assignments in the pages */
+const renameTargets = [
+  root + "client/src/pages/WeekDetail.tsx",
+  root + "client/src/pages/SessionDetail.tsx",
+  root + "client/src/pages/HowItWorks.tsx",
+];
+
+for (const p of renameTargets) {
+  if (!fs.existsSync(p)) continue;
+  const before = read(p);
+  const after = before
+    .replace(/Progressions Assignments/g, "Progressive Assignments")
+    .replace(/Progression Assignments/g, "Progressive Assignments")
+    .replace(/Progressions Assignment/g, "Progressive Assignment")
+    .replace(/Progression Assignment/g, "Progressive Assignment");
+
+  if (after !== before) {
+    write(p, after);
+    changed.push(p);
+  }
+}
+
+console.log("Applied fixes. Files changed:");
+[...new Set(changed)].forEach((f) => console.log("  " + f));
+
+console.log("\nQuick verify searches:");
+console.log("Should find Transform line, Basics, Strategies, POWER, Wins, and Movement demos note.\n");
+NODE
+
+# quick verification in shell
+grep -R "Transform your Health in just 4 weeks" -n client/src/lib/vitality-reset-content.ts || true
+grep -R "Nutrition & Hydration Basics" -n client/src/lib/vitality-reset-content.ts || true
+grep -R "Smart Sustainable Strategies" -n client/src/lib/vitality-reset-content.ts || true
+grep -R "Stepping into your POWER" -n client/src/lib/vitality-reset-content.ts || true
+grep -R "Movement demos coming soon" -n client/src/pages/WeekDetail.tsx || true
