@@ -39,3 +39,10 @@ expertMode = true
 deploymentTarget = "autoscale"
 run = ["npm", "run", "start"]
 build = ["npm", "run", "build"]
+
+[userenv]
+
+[userenv.shared]
+STRIPE_PRICE_ID = "price_1ShJuECrfOTGHrZoka9n9qYX"
+VITE_STRIPE_PUBLISHABLE_KEY = "pk_test_51Sh8Q4CrfOTGHrZoRLlnb9LVijxyZWGpHNATqCapaqipckBphGip0f5Zimp7yJ2gJuNYTzEYsQFIC4FvJ6DNENpD00fDCtnhIF"
+APP_URL = "https://wellness-escape-hub--raspaceshida.replit.app"
